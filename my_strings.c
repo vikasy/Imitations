@@ -1,3 +1,13 @@
+/********************************************************************
+  Author: Vikas YADAV (vikasy@gmail.com)
+  Filename: my_strings.c
+  Topic: Implementaton of various tring related functions
+   
+  Objective: Implement a host of string related functions, most of them 
+  are found in C strings.h definitions.
+  
+  ***********************************************************************/
+  
 #include <stdio.h>
 #include <string.h>
 #include <time.h>

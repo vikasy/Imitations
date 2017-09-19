@@ -1,5 +1,14 @@
 #ifndef __MYSTRINGS_H__
 #define __MYSTRINGS_H__
+/********************************************************************
+  Author: Vikas YADAV (vikasy@gmail.com)
+  Filename: my_strings.c
+  Topic: Implementaton of various tring related functions
+   
+  Objective: Implement a host of string related functions, most of them 
+  are found in C strings.h definitions.
+  
+  ***********************************************************************/
 
 // NOTE: destination memory must be long enough to accomdadate teh desired result
 // otherwise memory corruption can happen at run time.

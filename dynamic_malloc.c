@@ -1,30 +1,32 @@
 /**********************************************************************
+  Author: Vikas YADAV (vikasy@gmail.com)
+  Filename: dynamic_malloc.c
+  Topic: Implementaton of dynamic memory allocation using "first-fit" scheme
 
-Dynamic memory allocation using "first-fit" scheme
-
-void *my_malloc( size_t size);
-void  my_free( void *p );
+ Implements:
+ void *my_malloc( size_t size);
+ void  my_free( void *p );
  
-In reality program gets memory in heap from kernel via system call like 
-sbrk(size_t size) system call in unix-like, however, here for simulation
-purpose we use my_sbrk(size_t newsize) function.
+ In reality program gets memory in heap from kernel via system call like 
+ sbrk(size_t size) system call in unix-like, however, here for simulation 
+ purpose we use my_sbrk(size_t newsize) function.
 
-Mem allocation is done from a big blob of contingous memory of 100MB.
-Each allocated memory size is sum of requested memory size plus overhead.
-Overhead consists of header info and extra memory due to minimum memory 
-size restriction and to keep total memory aligned to double word boundry.
+ Mem allocation is done from a big blob of contingous memory of 100MB. 
+ Each allocated memory size is sum of requested memory size plus overhead. 
+ Overhead consists of header info and extra memory due to minimum memory 
+ size restriction and to keep total memory aligned to double word boundry.
 
-Freelist is a circular linked list arranged in increasing order of 
-starting memory address of free memory blocks. 
+ Freelist is a circular linked list arranged in increasing order of  
+ starting memory address of free memory blocks. 
 
-The allocation uses "first-fit" policy, where the first available node 
-(one with memory size greater than or eequal to the requested size) in 
-freelist is used to allocate requested memory. 
-The search for the next fit block to meet requested size starts beyond 
-the most recent block position.
-The allocated memory has a minimum size, thus if requested memory is 
-less than minimum size, the  system will allocate the minimum size, 
-causing what is called internal memory fragmentation.
+ The allocation uses "first-fit" policy, where the first available node 
+ (one with memory size greater than or eequal to the requested size) in 
+ freelist is used to allocate requested memory. 
+ The search for the next fit block to meet requested size starts beyond 
+ the most recent block position.The allocated memory has a minimum size, 
+ thus if requested memory is less than minimum size, the  system will 
+ allocate the minimum size, causing what is called internal memory 
+ fragmentation.
 
 
 ***********************************************************************/
